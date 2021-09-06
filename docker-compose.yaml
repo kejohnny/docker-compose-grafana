@@ -1,0 +1,29 @@
+version: '3.2'
+services:
+  grafana:
+    restart: always
+    build:
+      context: grafana/
+      args:
+        GRAFANA_VERSION: $GRAFANA_VERSION
+    privileged: true
+    user: root
+    ports:
+      - "3000:3000"
+    container_name: grafana
+    environment:
+     TZ: Asia/Taipei
+     GF_INSTALL_PLUGINS : alexanderzobnin-zabbix-app
+     enable_alpha : 'true'
+     allow_loading_unsigned_plugins : alexanderzobnin-zabbix-datasource
+    volumes:
+      - storage:/var/lib/grafana
+      - etc:/etc/grafana
+      - log:/var/log/grafana
+
+volumes:
+  storage:
+  etc:
+  log:
+
+
