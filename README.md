@@ -1,5 +1,5 @@
 # docker-compose-grafana
-1.Type command "docker-compose  -f docker-compose.yaml up -d" run it on this folder(docker-compose.yaml)
+1.Type command "docker-compose up --build" run it on this folder(docker-compose.yaml)
    however,type docker-compose down ,shut down it.
    
 2.The folder grafana include this file .env indicate the variable GRAFANA_VERSION modify this 
